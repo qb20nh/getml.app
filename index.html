@@ -5,3 +5,9 @@ Invoke-WebRequest https://github.com/conda-forge/miniforge/releases/latest/downl
 Start-Process miniforge3.exe -Wait -ArgumentList "/S /AddToPath=1"
 
 . $PROFILE
+
+conda info --base
+
+# Invoke-WebRequest getml.app/conda.txt -OutFile conda.txt
+
+# conda install -y --file conda.txt
