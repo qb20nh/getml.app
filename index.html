@@ -1,4 +1,12 @@
-#<!--<#--><style>body { white-space: pre; font-family: monospace; }</style><!--#>#-->
+#<!--
+<#-->
+<style>
+body {
+    white-space: pre;
+    font-family: monospace;
+}
+</style>
+<!--#>#-->
 
 Set-Location ~/Downloads
 
