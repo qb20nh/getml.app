@@ -1,7 +1,4 @@
-#<!--
-<#--><head>
-    <meta http-equiv="content-type" content="text/plain">
-</head><!--#>#-->
+#<!--<#--><style>body { white-space: pre; font-family: monospace; }</style><!--#>#-->
 
 Set-Location ~/Downloads
 
