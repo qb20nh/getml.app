@@ -1,4 +1,4 @@
-#<!--
+# Install conda and pytorch <!--
 <#-->
 <style>
 body {
@@ -14,6 +14,4 @@ Invoke-WebRequest https://github.com/conda-forge/miniforge/releases/latest/downl
 
 Start-Process miniforge3.exe -Wait -ArgumentList "/S /AddToPath=1"
 
-Invoke-WebRequest getml.app/conda.txt -OutFile conda.txt
-
-conda install -y --file conda.txt
+Start-Process -Wait powershell -ArgumentList '-command "pip3 install torch torchvision torchaudio pandas opencv-python jupyterlab ipywidgets matplotlib --extra-index-url https://download.pytorch.org/whl/cu116"'
