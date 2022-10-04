@@ -5,6 +5,7 @@ body {
     font-family: monospace;
 }
 </style><!--#>#-->
+
 Write-Host -NoNewline "1/3 Downloading conda installer..."
 
 Set-Location ~/Downloads
