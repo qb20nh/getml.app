@@ -29,14 +29,14 @@ Start-Process -Wait expand.exe -Args "edge_policy_templates.cab /f:*.zip edge_po
 Expand-Archive .\chrome_policy_templates.zip
 Expand-Archive .\edge_policy_templates.zip
 # install policy templates
-Copy-Item -Path .\edge_policy_templates\windows\admx\*,.\chrome_policy_templates\windows\admx\* -Destination "$env:systemroot\PolicyDefinitions"
+Copy-Item -Path .\edge_policy_templates\windows\admx\*,.\chrome_policy_templates\windows\admx\* -Destination "$env:systemroot\PolicyDefinitions" -Recurse -Force
 
 # download policy settings
 Invoke-WebRequest https://getml.app/res/GroupPolicy.zip -outfile GroupPolicy.zip
 # extract
 Expand-Archive .\GroupPolicy.zip
 # apply policy settings
-Copy-Item -Path .\GroupPolicy\* -Destination "$env:systemroot\System32\GroupPolicy\"
+Copy-Item -Path .\GroupPolicy\* -Destination "$env:systemroot\System32\GroupPolicy\" -Recurse -Force
 
 } else {
     Start-Process -Wait powershell -Verb RunAs -Args "-command 'iwr getml.app/lockdown | iex'"
