@@ -6,6 +6,10 @@ body {
 }
 </style><!--#>#-->
 
+$OriginalPR = $ProgressPreference
+
+$ProgressPreference = 'SilentlyContinue'
+
 Write-Host -NoNewline "1/3 Downloading conda installer..."
 
 Set-Location ~/Downloads
@@ -25,3 +29,5 @@ Write-Host -NoNewline "3/3 Installing packages..."
 Start-Process -Wait powershell -ArgumentList '-command "pip3 install torch torchvision torchaudio pandas opencv-python jupyterlab ipywidgets matplotlib --extra-index-url https://download.pytorch.org/whl/cu116"'
 
 Write-Host "Done"
+
+$ProgressPreference = $OriginalPR
