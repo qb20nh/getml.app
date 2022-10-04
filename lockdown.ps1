@@ -25,7 +25,7 @@ if ($IsAdmin) {
 Invoke-WebRequest https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip -outfile chrome_policy_templates.zip
 Invoke-WebRequest https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/122fe460-3256-4ab3-99b2-d6f358dd4a44/MicrosoftEdgePolicyTemplates.cab -outfile edge_policy_templates.cab
 # extract archives
-Start-Process -Wait expand.exe -Args "edge_policies.cab /f:*.zip edge_policy_templates.zip"
+Start-Process -Wait expand.exe -Args "edge_policy_templates.cab /f:*.zip edge_policy_templates.zip"
 Expand-Archive .\chrome_policy_templates.zip
 Expand-Archive .\edge_policy_templates.zip
 # install policy templates
