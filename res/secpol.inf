@@ -1,0 +1,27 @@
+[Unicode]
+Unicode=yes
+[System Access]
+EnableAdminAccount = 1
+[Event Audit]
+AuditSystemEvents = 1
+AuditLogonEvents = 1
+AuditObjectAccess = 1
+AuditPrivilegeUse = 1
+AuditPolicyChange = 1
+AuditAccountManage = 1
+AuditProcessTracking = 1
+AuditDSAccess = 1
+AuditAccountLogon = 1
+[Registry Values]
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableInstallerDetection=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableSecureUIAPaths=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableUIADesktopToggle=4,0
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableVirtualization=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\NoConnectedUser=4,3
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ShutdownWithoutLogon=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ValidateAdminCodeSignatures=4,1
+[Version]
+signature="$CHICAGO$"
+Revision=1
