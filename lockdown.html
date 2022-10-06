@@ -29,8 +29,8 @@ Write-Host "Done"
 # extract archives
 Write-Host -NoNewline "2/6 Installing policy templates..."
 Start-Process -Wait expand.exe -Args "edge_policy_templates.cab /f:*.zip edge_policy_templates.zip"
-Expand-Archive .\chrome_policy_templates.zip
-Expand-Archive .\edge_policy_templates.zip
+Expand-Archive .\chrome_policy_templates.zip -Force
+Expand-Archive .\edge_policy_templates.zip -Force
 # install policy templates
 Copy-Item -Path .\edge_policy_templates\windows\admx\*,.\chrome_policy_templates\windows\admx\* -Destination "$env:systemroot\PolicyDefinitions" -Recurse -Force
 Write-Host "Done"
@@ -41,7 +41,7 @@ Invoke-WebRequest https://getml.app/res/GroupPolicy.zip -outfile GroupPolicy.zip
 Write-Host "Done"
 # extract
 Write-Host -NoNewline "4/6 Applying policy settings..."
-Expand-Archive .\GroupPolicy.zip
+Expand-Archive .\GroupPolicy.zip -Force
 # apply policy settings
 Copy-Item -Path .\GroupPolicy\* -Destination "$env:systemroot\System32\GroupPolicy\" -Recurse -Force
 Write-Host "Done"
