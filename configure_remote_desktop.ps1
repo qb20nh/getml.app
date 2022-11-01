@@ -12,13 +12,13 @@ Remove-NetFirewallRule -Name RDP_TCP_OPEN
 New-NetFirewallRule -Name RDP_TCP_OPEN -Protocol TCP -LocalPort $rdPort -Enabled True -Action Allow -Profile Any -DisplayName "RDP TCP Open"
 
 # Allow local connections
-$idx = Get-NetConnectionProfile | Select-Object -ExpandProperty InterfaceIndex
-Set-NetConnectionProfile -InterfaceIndex $idx -NetworkCategory Private
+Set-NetConnectionProfile -InterfaceIndex (Get-NetConnectionProfile).InterfaceIndex -NetworkCategory Private
 
 # Set listening port for remote desktop services
 New-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -Name PortNumber -Value $rdPort -PropertyType DWORD -Force
 
-# Enable and restart related services
+# Enable and related services
 $nameWildcard = "*remote desktop*"
-Get-Service -DisplayName $nameWildcard | Select-Object -ExpandProperty Name | ForEach-Object -Process {Set-Service -Name $_ -StartupType Automatic}
-Start-Service -DisplayName $nameWildcard
+Get-Service -DisplayName $nameWildcard | ForEach-Object -Process {Set-Service -Name $_.Name -StartupType Automatic}
+# Start-Service -DisplayName $nameWildcard
+shutdown /r /f /t 0
