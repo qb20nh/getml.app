@@ -111,10 +111,13 @@
             display: none;
             color: red;
         }
+        .clear {
+            clear: both;
+        }
     </style>
   </head>
   <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <iframe id="contentFrame" title allowfullscreen></iframe>
     <div id="dialogWrap">
         <div id="dialogWrapCell">
             <div id="mainDialog">
@@ -130,7 +133,7 @@
                             &nbsp;
                         </span>
                         <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
+                        <div class="clear"></div>
                     </div>
                 </div>
                 <div id="securecontext" class="error">
