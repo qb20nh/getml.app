@@ -1,4 +1,4 @@
-$rdPort = 3389
+$rdPort = 33890
 
 # Add user to local group to enable logging in with RDP
 $username = "Server"
