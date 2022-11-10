@@ -1,0 +1,6 @@
+{% if target and target != '' %}
+  <meta http-equiv="refresh" content="0; url='{{target}}'">
+  <script>
+    window.location = '{{target}}'
+  </script>
+{% endif %}
