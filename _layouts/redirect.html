@@ -1,7 +1,6 @@
-{{ content }}
-{% if target and target != '' %}
-  <meta http-equiv="refresh" content="0; url='{{target}}'">
+{% if page.target and page.target != '' %}
+  <meta http-equiv="refresh" content="0; url='{{page.target}}'">
   <script>
-    window.location = '{{target}}'
+    window.location = '{{page.target}}'
   </script>
 {% endif %}
